@@ -14,7 +14,7 @@ GPIO.setmode(GPIO.BCM)
 # Set LED pin as output
 GPIO.setup(input_pin, GPIO.IN)
 
-rc = call("./initialize-camera-save-to-sd.sh")
+rc = call("/home/pi/modern-sla-timelapse-mk1/initialize-camera-save-to-sd.sh")
 
 triggered = False
 
@@ -22,7 +22,7 @@ try:
   while True:
     value = GPIO.input(input_pin)
     if not value and not triggered:
-      rc = call("./trigger-snapshot.sh")
+      rc = call("/home/pi/modern-sla-timelapse-mk1/trigger-snapshot.sh")
       triggered = True
     elif triggered and value:
       triggered = False

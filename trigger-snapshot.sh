@@ -11,4 +11,4 @@ SNAPSHOT_FILENAME=$5
 SNAPSHOT_FULL_PATH=$6
 
 # trigger the camera and exit immediately
-gphoto2 --auto-detect --trigger-capture
+gphoto2 --auto-detect --trigger-capture --set-config capturetarget=1
